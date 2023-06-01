@@ -3,30 +3,30 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav class="bg-white dark:bg-gray-900 z-50 fixed w-full top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="bg-white dark:bg-gray-900 z-50 fixed w-full top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/home">
-          <span class="self-center text-2xl font-bold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-bold whitespace-nowrap dark:text-white">
             O-Market
           </span>
         </a>
         <div>
-          <form class="flex items-center">
-            <div class="w-64">
+          <form className="flex items-center">
+            <div className="w-64">
               <input
                 type="text"
                 id="simple-search"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search Products"
                 required
               />
             </div>
             <button
               type="submit"
-              class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               <svg
-                class="w-5 h-5"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ const Navbar = () => {
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                 ></path>
               </svg>
-              <span class="sr-only">Search Products</span>
+              <span className="sr-only">Search Products</span>
             </button>
           </form>
         </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
               <button
                 id="dropdownNavbarLink"
                 data-dropdown-toggle="dropdownNavbar"
-                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 <svg
                   className="w-6 h-6 mr-2 text-primary-700 stroke-2 hover:text-primary-800"
@@ -91,7 +91,7 @@ const Navbar = () => {
                 </svg>
                 Account{" "}
                 <svg
-                  class="w-5 h-5 ml-1"
+                  className="w-5 h-5 ml-1"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -106,33 +106,33 @@ const Navbar = () => {
               </button>
               <div
                 id="dropdownNavbar"
-                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                className="z-10 hidden font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
               >
                 <ul
-                  class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                  className="py-2 text-sm text-gray-700 dark:text-gray-400"
                   aria-labelledby="dropdownLargeButton"
                 >
                   <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    <Link
+                      to="/home/dashboard"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Dashboard
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link
                       to="/home/sell-item"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Sell Item
                     </Link>
                   </li>
                 </ul>
-                <div class="py-1">
+                <div className="py-1">
                   <Link
                     to="/signin"
-                    class="block px-4 py-2 text-center text-sm text-white bg-primary-700 hover:bg-primary-800 dark:hover:bg-gray-800 dark:text-white"
+                    className="block px-4 py-2 text-center text-sm text-white bg-primary-700 hover:bg-primary-800 dark:hover:bg-gray-800 dark:text-white"
                   >
                     Sign In
                   </Link>

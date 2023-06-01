@@ -6,7 +6,8 @@ import Category from "../components/Category";
 import ProductDetails from "./ProductDetails";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Cart from "./Cart";
-import SellItem from "./SellItem";
+import Dashboard from "./Dashboard";
+import ProductForm from "./ProductForm";
 
 const Home = () => {
   const { pathname } = useLocation();
@@ -22,7 +23,9 @@ const Home = () => {
       <Routes>
         <Route path="/product-detail" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/sell-item" element={<SellItem />} />
+        <Route path="/sell-item" element={<ProductForm />} />
+        <Route path="/edit-item" element={<ProductForm />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );
