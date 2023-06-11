@@ -14,7 +14,11 @@
     "flowbite": "^1.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.11.2",
+    "react-toastify": "^9.1.3",
+    "stripe": "^12.9.0",
+    "swiper": "^9.3.2",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
@@ -22,6 +26,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
+    "dotenv": "^16.1.4",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",

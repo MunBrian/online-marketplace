@@ -1,122 +1,105 @@
-import React from "react";
-import UserProduct from "../components/UserProduct";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import UserProduct from "../components/UserProduct";
+import ProductContext from "../context/ProductContext";
+import UserContext from "../context/UserContext";
 
 const Dashboard = () => {
+  //get products from productContext
+  const { products, orders } = useContext(ProductContext);
+
+  //get userDetails from UserContext
+  const { userDetails, userId } = useContext(UserContext);
+
+  const { name, email } = userDetails;
+
+  const userProducts = products.filter(
+    (product) =>
+      product.user_id === userId &&
+      !orders.some((item) => item.user_id === userId)
+  );
+
+  const soldItems = orders.filter((order) => order.user_id === userId);
+
   return (
-    <div className="mt-24">
-      <div>
-        <form className="md:space-y-6" action="#">
-          <div className="flex text-center space-x-5 items-center">
-            <img
-              className="w-24 h-24 rounded-full shadow-lg"
-              src="/assests/images/empty-profile.png"
-              alt="Bonnie image"
-            />
-            <h2
-              to="/home/profile"
-              className="mb-1 text-3xl font-medium text-gray-900 dark:text-white"
-            >
-              Bonnie Green
-            </h2>
-          </div>
-          <div>
-            <div>
-              <label
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                for="file_input"
-              >
-                Choose photo
-              </label>
-              <input
-                class="block text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-white focus:outline-none dark:bg-primary-700 dark:border-gray-600 dark:placeholder-gray-400"
-                id="file_input"
-                type="file"
-              ></input>
-            </div>
-          </div>
-          <h3 className="text-xl font-bold dark:text-white">
-            Personal Details
-          </h3>
-          <div class="grid md:grid-cols-2 md:gap-6 py-5 mt-5 border-t  border-gray-200 dark:border-gray-700">
-            <div>
-              <label
-                for="first_name"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Full name
-              </label>
-              <input
-                type="text"
-                id="first_name"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="John"
-                required
-              />
-            </div>
-            <div>
-              <label
-                for="email"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Email
-              </label>
-              <input
-                type="text"
-                id="email"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="name@email.com"
-                required
-              />
-            </div>
-            <div>
-              <label
-                for="id_card"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Identification Card
-              </label>
-              <input
-                type="text"
-                id="id_card"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="e.g. 38696406"
-                required
-              />
-            </div>
-            <div>
-              <label
-                for="phone_number"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Mobile Number
-              </label>
-              <input
-                type="text"
-                id="phone_number"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="+254712345678"
-                required
-              />
-            </div>
-          </div>
-          <div className="text-end">
-            <button
-              type="submit"
-              className=" text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-            >
-              Save
-            </button>
-          </div>
-        </form>
-        <div className="mt-5 border-t border-gray-200 dark:border-gray-700">
+    <div className="md:mt-24 mb-4 mt-48 mx-auto">
+      <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Hello, {name}
+          </h5>
+        </a>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          {email}
+        </p>
+      </div>
+      <div className="mt-5 border-t border-gray-200 dark:border-gray-700">
+        <div className="border-gray-200 dark:border-gray-700 mb-4">
           <h3 className="text-xl font-bold my-3 dark:text-white">
             Items on sell
           </h3>
-          <div className="grid grid-cols-4 gap-4 ">
-            <UserProduct />
-            <UserProduct />
-          </div>
+          {userProducts.length === 0 ? (
+            <div className="">
+              {/* if user has no products on sell*/}
+              <div className="h-52 flex flex-col items-center shadow-md justify-center shadow-gray-300 bg-gray-50 ">
+                <h1 className="text-2xl text-gray-800 font-semibold mb-4">
+                  No items on sell
+                </h1>
+                <Link
+                  to="/home/sell-item"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Sell Product
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-4 ">
+              {userProducts.map((product, index) => (
+                <UserProduct key={index} product={product} />
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="border-gray-200 dark:border-gray-700">
+          <h3 className="text-xl font-bold my-3 dark:text-white">Items Sold</h3>
+          {soldItems.length === 0 ? (
+            <div className="">
+              {/* if user has no products on sell*/}
+              <div className="h-52 flex items-center shadow-md justify-center shadow-gray-300 bg-gray-50 ">
+                <h1 className="text-2xl text-gray-800 font-semibold mb-4">
+                  No items sold yet
+                </h1>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-4 ">
+              {soldItems.map((product, index) => (
+                <div
+                  key={index}
+                  className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                >
+                  <div>
+                    <img
+                      className="rounded-t-lg object-cover h-48 w-full"
+                      src={product.product_pic}
+                      alt="product image"
+                    />
+                  </div>
+                  <div className="px-5 my-3 space-y-5">
+                    <div className="my-5">
+                      <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                        {product.product_name}
+                      </h5>
+                    </div>
+                    <div className="text-3xl font-bold text-gray-900 dark:text-white">
+                      ${product.product_price}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

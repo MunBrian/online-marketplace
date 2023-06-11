@@ -1,21 +1,67 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { databases, storage } from "../appwrite/appConfig";
 
-const UserProduct = () => {
+const UserProduct = ({ product }) => {
+  //delete product
+  const deleteProduct = (id) => {
+    console.log(id);
+
+    //split product pic url into array by "/"
+    const data = product.product_pic.split("/");
+
+    console.log(data);
+
+    //get fileId from the product_pic url
+    const fileId = data[8];
+
+    //delete product - pass the product id
+    const deletePromise = databases.deleteDocument(
+      import.meta.env.VITE_DATABASE_ID,
+      import.meta.env.VITE_COLLECTION_ID,
+      id
+    );
+
+    deletePromise.then(
+      function (response) {
+        console.log(response);
+      },
+      function (error) {
+        console.log(error); // Failure
+      }
+    );
+
+    //delete the product photo in storage pass the fileId
+    const filePromise = storage.deleteFile(
+      import.meta.env.VITE_BUCKET_ID,
+      fileId
+    );
+
+    filePromise.then(
+      function (response) {
+        console.log(response);
+        //reload the window
+        window.location.reload(); // Success
+      },
+      function (error) {
+        console.log(error); // Failure
+      }
+    );
+  };
+
   return (
     <div>
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <Link to="/home/product-detail">
+        <Link to={"/home/product-detail/" + product.$id}>
           <img
-            className="rounded-t-lg object-cover hover:scale-105"
-            src="/assests/images/headphones.jpg"
+            className="rounded-t-lg object-cover h-48 w-full hover:scale-105"
+            src={product.product_pic}
             alt="product image"
           />
         </Link>
-        <div className="px-5 pb-5 space-y-5">
-          <Link className="my-5" to="/home/product-detail">
-            <h5 className="mt-5 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-              Sony Headphones
+        <div className="px-5 my-3 space-y-5">
+          <Link className="my-5" to={"/home/product-detail/" + product.$id}>
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              {product.product_name}
             </h5>
           </Link>
           {/* <div className="flex items-center mt-2.5 mb-5">
@@ -73,19 +119,22 @@ const UserProduct = () => {
               5.0
             </span>
           </div> */}
-          <div className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
-            $599
+          <div className="text-3xl font-bold text-gray-900 dark:text-white">
+            ${product.product_price}
           </div>
           <div className="flex items-center justify-between">
             <Link
-              to="/home/edit-item"
+              to={"/home/edit-item/" + product.$id}
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Edit item
             </Link>
             <button
               type="button"
-              class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              onClick={() => {
+                deleteProduct(product.$id);
+              }}
+              className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
             >
               Remove Item
             </button>
