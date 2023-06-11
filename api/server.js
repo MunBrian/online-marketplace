@@ -14,7 +14,7 @@ app.use(
 
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
-app.post("/payment", async (req, res) => {
+app.post("/api/payment", async (req, res) => {
   const { items } = req.body;
 
   try {

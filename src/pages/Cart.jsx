@@ -40,7 +40,7 @@ const Cart = () => {
     //show load spinner
     setIsLoading(!isLoading);
 
-    fetch("http://localhost:8000/payment", {
+    fetch("http://localhost:8000/api/payment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
