@@ -83,7 +83,6 @@ const ProductForm = () => {
 
     promise.then(
       function (response) {
-        console.log(response);
         setTimeout(() => {
           //redirect to dashboard after 5000 milliseconds
           window.location.href = "/home/dashboard";
@@ -161,7 +160,6 @@ const ProductForm = () => {
 
     promise.then(
       function (response) {
-        console.log(response);
         //redirect to dashboard after 5000 milliseconds
         setTimeout(() => {
           window.location.href = "/home/dashboard";

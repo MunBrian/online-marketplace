@@ -19,11 +19,6 @@ const Cart = () => {
   //set cartPrice to 0
   let cartPrice = 0;
 
-  //get cart items from localstorage
-  //const cart = JSON.parse(localStorage.getItem("cartItems"));
-
-  //const newCart = cart.filter((product) => product.user_id !== userId);
-
   //loop through every product on the cart
   cart.map((product) => {
     //update the value of cart
@@ -68,12 +63,9 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    cart.map((product) => {
-      if (product.user_id === userId) {
-        localStorage.removeItem("cartItems");
-        setCart([]);
-      }
-    });
+    const updatedCart = cart.filter((product) => product.user_id !== userId);
+    setCart(updatedCart);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
   }, []);
 
   return (

@@ -65,13 +65,13 @@ const Checkout = () => {
           console.log("All orders posted successfully:", response);
           //redirect to dashboard after 5000 milliseconds
           setTimeout(() => {
-            window.location.href = "/home/dashboard";
+            window.location.href = "/home/orders";
           }, 5000);
 
           //delete all items from the localstorage
           localStorage.removeItem("cartItems");
           toast.success(
-            "Product was successful edited. You will be redirected to the Dashboard.",
+            "Payment was successfull. You will be redirected to the orders page.",
             {
               position: "top-right",
               autoClose: 3000,

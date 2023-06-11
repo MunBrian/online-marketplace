@@ -13,13 +13,15 @@ const Dashboard = () => {
 
   const { name, email } = userDetails;
 
+  //get products whose order.user_id matches the current user in session to get sold products
+  const soldItems = orders.filter((order) => order.user_id === userId);
+
+  //get products that have user_id same as current useer in session and products that name do not match sold products
   const userProducts = products.filter(
     (product) =>
-      product.user_id === userId &&
-      !orders.some((item) => item.user_id === userId)
+      product.user_id === userDetails.$id &&
+      !soldItems.some((item) => item.product_name === product.product_name)
   );
-
-  const soldItems = orders.filter((order) => order.user_id === userId);
 
   return (
     <div className="md:mt-24 mb-4 mt-48 mx-auto">

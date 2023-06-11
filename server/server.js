@@ -34,8 +34,8 @@ app.post("/payment", async (req, res) => {
           quantity: 1,
         };
       }),
-      success_url: `${process.env.SERVER_URL}/checkout`,
-      cancel_url: `${process.env.SERVER_URL}/cancel`,
+      success_url: `${process.env.SERVER_URL}/checkout?stripe_referrer=true`,
+      cancel_url: `${process.env.SERVER_URL}/cancel?stripe_referrer=true`,
     });
 
     res.json({ url: session.url });

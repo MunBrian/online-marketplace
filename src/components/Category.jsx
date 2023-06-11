@@ -21,7 +21,7 @@ const Category = () => {
   };
 
   return (
-    <div className="flex justify-center md:justify-start items-center md:p-4 p-1 md:my-4">
+    <div className="flex justify-center items-center md:justify-start overflow-x-auto md:p-4 p-1 md:my-4">
       {categoriesArray.map((category, index) => (
         <button
           key={index}
