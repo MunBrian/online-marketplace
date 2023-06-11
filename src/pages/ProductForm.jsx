@@ -68,6 +68,22 @@ const ProductForm = () => {
       photoResponse.$id
     ).href;
 
+    if (product.product_description.length > 1000) {
+      toast.error("Product Description must be less than 1000 characters.", {
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
+
+      setIsLoading(false);
+      return;
+    }
+
     //save product details to appwrite db
     const promise = databases.createDocument(
       import.meta.env.VITE_DATABASE_ID,
@@ -144,6 +160,23 @@ const ProductForm = () => {
       import.meta.env.VITE_BUCKET_ID,
       photoResponse.$id
     ).href;
+
+    if (product.product_description.length > 1000) {
+      toast.error("Product Description must be less than 1000 characters.", {
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
+
+      setIsLoading(false);
+
+      return;
+    }
 
     //save product details to appwrite db
     const promise = databases.updateDocument(
