@@ -11,35 +11,33 @@ app.use(cors());
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
 app.post("/api/payment", async (req, res) => {
-  // const { items } = req.body;
+  const { items } = req.body;
 
-  // try {
-  //   const session = await stripe.checkout.sessions.create({
-  //     payment_method_types: ["card"],
-  //     mode: "payment",
-  //     line_items: items.map((item) => {
-  //       return {
-  //         price_data: {
-  //           currency: "usd",
-  //           product_data: {
-  //             name: item.product_name,
-  //             images: [item.product_pic],
-  //           },
-  //           unit_amount: item.product_price * 100,
-  //         },
-  //         quantity: 1,
-  //       };
-  //     }),
-  //     success_url: `${process.env.SERVER_URL}/checkout?stripe_referrer=true`,
-  //     cancel_url: `${process.env.SERVER_URL}/cancel?stripe_referrer=true`,
-  //   });
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      mode: "payment",
+      line_items: items.map((item) => {
+        return {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: item.product_name,
+              images: [item.product_pic],
+            },
+            unit_amount: item.product_price * 100,
+          },
+          quantity: 1,
+        };
+      }),
+      success_url: `${process.env.SERVER_URL}/checkout?stripe_referrer=true`,
+      cancel_url: `${process.env.SERVER_URL}/cancel?stripe_referrer=true`,
+    });
 
-  //   res.json({ url: session.url });
-  // } catch (e) {
-  //   res.status(500).json({ error: e.message });
-  // }
-
-  res.json({ Message: "Nice one" });
+    res.json({ url: session.url });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
 });
 
 module.exports = app;
