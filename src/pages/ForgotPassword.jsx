@@ -10,7 +10,7 @@ const ForgotPassword = () => {
 
     const promise = account.createRecovery(
       email,
-      "http://localhost:5173/reset-password/"
+      `${import.meta.env.VITE_SERVER_URL}/reset-password/`
     );
 
     promise.then(
