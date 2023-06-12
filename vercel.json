@@ -8,7 +8,7 @@
   ],
   "functions": {
     "api/**/*": {
-      "runtime": "Node v19.6.0"
+      "runtime": "node v19.6.0"
     }
   }
 }
