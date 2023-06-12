@@ -4,7 +4,7 @@ import { Client, Account, Databases, Storage } from "appwrite";
 const client = new Client();
 
 client
-  .setEndpoint("https://appwrite.online-marketplace-sepia.vercel.app")
+  .setEndpoint(import.meta.env.VITE_ENDPOINT)
   .setProject(import.meta.env.VITE_PROJECT);
 
 export const account = new Account(client);
