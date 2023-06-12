@@ -17,6 +17,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import Unauthorized from "./pages/Unauthorized";
+import "flowbite";
 
 function App() {
   const location = useLocation();
