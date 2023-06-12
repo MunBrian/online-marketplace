@@ -8,7 +8,7 @@
   ],
   "functions": {
     "api/**/*": {
-      "runtime": "nodejs14"
+      "runtime": "vercel-node@1.10.0"
     }
   }
 }
