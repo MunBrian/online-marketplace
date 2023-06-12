@@ -40,7 +40,7 @@ const Cart = () => {
     //show load spinner
     setIsLoading(!isLoading);
 
-    fetch("https://online-marketplace-sepia.vercel.app/api/payment", {
+    fetch("/api/payment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
