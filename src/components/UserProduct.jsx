@@ -53,14 +53,14 @@ const UserProduct = ({ product }) => {
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <Link to={"/home/product-detail/" + product.$id}>
           <img
-            className="rounded-t-lg object-cover h-48 w-full hover:scale-105"
+            className="rounded-t-lg object-cover md:h-48 h-32 w-full hover:scale-105"
             src={product.product_pic}
             alt="product image"
           />
         </Link>
-        <div className="px-5 my-3 space-y-5">
+        <div className="px-5 my-3 md:space-y-5 space-y-2">
           <Link className="my-5" to={"/home/product-detail/" + product.$id}>
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            <h5 className="md:text-xl text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
               {product.product_name}
             </h5>
           </Link>
@@ -119,13 +119,13 @@ const UserProduct = ({ product }) => {
               5.0
             </span>
           </div> */}
-          <div className="text-3xl font-bold text-gray-900 dark:text-white">
+          <div className="md:text-3xl text-lg font-bold text-gray-900 dark:text-white">
             ${product.product_price}
           </div>
-          <div className="flex items-center justify-between">
+          <div className="md:flex md:items-center md:justify-between space-y-3 ">
             <Link
               to={"/home/edit-item/" + product.$id}
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white block bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Edit item
             </Link>
@@ -134,7 +134,7 @@ const UserProduct = ({ product }) => {
               onClick={() => {
                 deleteProduct(product.$id);
               }}
-              className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              className="focus:outline-none block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
             >
               Remove Item
             </button>

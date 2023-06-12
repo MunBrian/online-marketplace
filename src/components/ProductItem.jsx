@@ -3,7 +3,7 @@ import AddToCart from "./AddToCart";
 
 const ProductItem = ({ product }) => {
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full p-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <Link to={"/home/product-detail/" + product.$id}>
         <img
           className="rounded-t-lg object-cover md:h-48 h-28 w-full hover:scale-105"
@@ -11,14 +11,14 @@ const ProductItem = ({ product }) => {
           alt="product image"
         />
       </Link>
-      <div className="px-2 pb-5 mt-2">
+      <div className=" mt-2 ">
         <Link to={"/home/product-detail/" + product.$id}>
-          <h5 className="md:text-xl text-base font-semibold tracking-tight text-gray-900 dark:text-white md:mb-3 mt-2.5 mb-2">
+          <h5 className="md:text-xl whitespace-nowrap text-base font-semibold tracking-tight text-gray-900 dark:text-white md:mb-3 mt-2.5 mb-2">
             {product.product_name}
           </h5>
         </Link>
-        <div className="md:flex md:items-center md:justify-between ">
-          <span className="md:text-3xl text-lg font-bold text-gray-900 dark:text-white">
+        <div className="md:flex md:justify-between md:items-center ">
+          <span className="md:text-3xl block text-lg font-bold text-gray-900 dark:text-white">
             ${product.product_price}
           </span>
           <AddToCart

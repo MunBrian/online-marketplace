@@ -90,11 +90,11 @@ const Dashboard = () => {
                   </div>
                   <div className="px-5 my-3 space-y-5">
                     <div className="my-5">
-                      <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      <h5 className="md:text-xl text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
                         {product.product_name}
                       </h5>
                     </div>
-                    <div className="text-3xl font-bold text-gray-900 dark:text-white">
+                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
                       ${product.product_price}
                     </div>
                   </div>

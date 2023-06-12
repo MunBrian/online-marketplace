@@ -422,7 +422,7 @@ const ProductForm = () => {
           ) : (
             <div className="md:w-2/4 flex flex-col">
               <h1 className="mb-8 text-center text-3xl text-gray-800 font-bold dark:text-white">
-                List Item for Sale
+                List Product for Sale
               </h1>
               <form onSubmit={handlePostProduct}>
                 <div className="mb-6">
