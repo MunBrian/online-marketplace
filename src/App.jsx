@@ -47,7 +47,6 @@ function App() {
               <Route path="/home/*" element={<Home />} />
               <Route path="/checkout" element={<Success />} />
               <Route path="/cancel" element={<Cancel />} />
-              <Route path="*" element={<Navigate to="/home" />} />
             </Routes>
           </CartProvider>
         </ProductProvider>
