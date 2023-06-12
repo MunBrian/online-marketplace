@@ -8,7 +8,7 @@
   ],
   "functions": {
     "api/**/*": {
-      "runtime": "provided"
+      "runtime": "node"
     }
   }
 }
