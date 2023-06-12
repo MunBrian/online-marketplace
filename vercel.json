@@ -5,5 +5,10 @@
       "destination": "/"
     },
     { "source": "/api/(.*)", "destination": "/api" }
-  ]
+  ],
+  "functions": {
+    "api/**/*": {
+      "runtime": "nodejs14"
+    }
+  }
 }
