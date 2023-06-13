@@ -8,6 +8,8 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
+let port = process.env.PORT || 8000;
+
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
 app.post("/payment", async (req, res) => {
@@ -30,8 +32,8 @@ app.post("/payment", async (req, res) => {
           quantity: 1,
         };
       }),
-      success_url: `${process.env.SERVER_URL}/checkout?stripe_referrer=true`,
-      cancel_url: `${process.env.SERVER_URL}/cancel?stripe_referrer=true`,
+      success_url: `${process.env.FRONTEND_URL}/checkout?stripe_referrer=true`,
+      cancel_url: `${process.env.FRONTEND_URL}/cancel?stripe_referrer=true`,
     });
 
     res.json({ url: session.url });
@@ -40,6 +42,10 @@ app.post("/payment", async (req, res) => {
   }
 });
 
-app.listen(8000, () => {
-  console.log("server is running on port 8000");
+app.get("/hello", (req, res) => {
+  res.send("hello world");
+});
+
+app.listen(port, () => {
+  console.log("server is running on port", `${port}`);
 });

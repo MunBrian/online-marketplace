@@ -40,7 +40,7 @@ const Cart = () => {
     //show load spinner
     setIsLoading(!isLoading);
 
-    fetch("/api/payment", {
+    fetch(`${import.meta.env.VITE_SERVER_URL}/payment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

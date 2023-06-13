@@ -3,12 +3,6 @@
     {
       "source": "/(.*)",
       "destination": "/"
-    },
-    { "source": "/api/(.*)", "destination": "/api" }
-  ],
-  "functions": {
-    "api/**/*": {
-      "runtime": "node@19.6.0"
     }
-  }
+  ]
 }

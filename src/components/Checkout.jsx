@@ -6,19 +6,24 @@ import { useContext } from "react";
 import UserContext from "../context/UserContext";
 
 import "react-toastify/dist/ReactToastify.css";
+import CartContext from "../context/CartContext";
 
 const Checkout = () => {
   //get userId and userDetails from UserContext
   const { userId, userDetails } = useContext(UserContext);
 
+  const { cart } = useContext(CartContext);
+
   //get user name from userDetails
   const { name } = userDetails;
 
   //get products from cart
-  const cart = JSON.parse(localStorage.getItem("cartItems"));
+  //const cart = JSON.parse(localStorage.getItem("cartItems"));
 
   //set cartPrice to 0
   let cartPrice = 0;
+
+  console.log(cart);
 
   //loop through every product on the cart
   cart.map((product) => {
