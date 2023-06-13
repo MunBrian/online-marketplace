@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import CartContext from "../context/CartContext";
 import Search from "./Search";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [dropdown, setDropDown] = useState(false);
   //get cart items
   const { cart } = useContext(CartContext);
 
@@ -48,6 +50,7 @@ const Navbar = () => {
             <li>
               <button
                 id="dropdownNavbarList"
+                onClick={() => setDropDown(!dropdown)}
                 data-dropdown-toggle="dropdownNavbar"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
@@ -83,7 +86,11 @@ const Navbar = () => {
               </button>
               <div
                 id="dropdownNavbar"
-                className="z-10 hidden font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                className={
+                  !dropdown
+                    ? "hidden z-10 font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                    : "z-10 font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                }
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
