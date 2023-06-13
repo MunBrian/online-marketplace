@@ -21,8 +21,6 @@ const Checkout = () => {
   //set cartPrice to 0
   let cartPrice = 0;
 
-  console.log(cart);
-
   //loop through every product on the cart
   cart.map((product) => {
     //update the value of cart
