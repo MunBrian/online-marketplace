@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { account } from "../appwrite/appConfig";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +17,10 @@ const ForgotPassword = () => {
 
     promise.then(
       function (response) {
-        console.log(response); // Success
+        toast.success("A reset password link was sent to your email.", {
+          autoClose: 4000,
+        });
+        // Success
         setEmail("");
       },
       function (error) {
