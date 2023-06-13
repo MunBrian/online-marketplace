@@ -12,13 +12,11 @@ const Checkout = () => {
   //get userId and userDetails from UserContext
   const { userId, userDetails } = useContext(UserContext);
 
-  const { cart } = useContext(CartContext);
-
   //get user name from userDetails
   const { name } = userDetails;
 
   //get products from cart
-  //const cart = JSON.parse(localStorage.getItem("cartItems"));
+  const cart = JSON.parse(localStorage.getItem("cartItems"));
 
   //set cartPrice to 0
   let cartPrice = 0;
