@@ -13,7 +13,7 @@ const Products = () => {
   const { products, orders } = useContext(ProductContext);
 
   //get carts items from Cart Context
-  const { cart, setCart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
   const { userId } = useContext(UserContext);
 
@@ -42,12 +42,6 @@ const Products = () => {
     //navigate to the search page and pass the searched input
     navigate("searched/" + category);
   };
-
-  useEffect(() => {
-    const updatedCart = cart.filter((product) => product.user_id !== userId);
-    setCart(updatedCart);
-    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
-  }, []);
 
   return (
     <div className="p-4 max-w-screen">

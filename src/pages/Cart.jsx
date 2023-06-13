@@ -31,6 +31,8 @@ const Cart = () => {
     removeFromCart(id);
   };
 
+  const updatedCart = cart.filter((product) => product.user_id !== userId);
+
   const handleCheckOut = () => {
     if (!session) {
       navigate("/signin");
@@ -46,7 +48,7 @@ const Cart = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        items: cart,
+        items: updatedCart,
       }),
     })
       .then((res) => {
@@ -62,27 +64,21 @@ const Cart = () => {
       });
   };
 
-  // useEffect(() => {
-  //   const updatedCart = cart.filter((product) => product.user_id !== userId);
-  //   setCart(updatedCart);
-  //   localStorage.setItem("cartItems", JSON.stringify(updatedCart));
-  // }, []);
-
   return (
     <div className="md:mt-24 mt-48 max-w-screen mx-auto">
       {isLoading ? (
         <SpinnerLoader />
       ) : (
         <>
-          {cart.length > 0 ? (
+          {updatedCart.length > 0 ? (
             <div className="md:flex md:gap-4">
               <div className="md:w-3/4 p-3 mb-4 shadow-md shadow-gray-300 bg-gray-50">
                 <div className="">
                   <h2 className=" text-gray-800 dark:text-white text-start text-xl font-medium">
-                    Cart {cart.length}
+                    Cart {updatedCart.length}
                   </h2>
-                  {!cart && <h1>No cart</h1>}
-                  {cart.map((item, index) => (
+                  {!updatedCart && <h1>No cart</h1>}
+                  {updatedCart.map((item, index) => (
                     <div
                       key={index}
                       className="flex mt-4 md:py-3  py-2 justify-between border-t-2 border-gray-300"
