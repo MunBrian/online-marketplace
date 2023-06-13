@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 import ProductItem from "./ProductItem";
 import ProductContext from "../context/ProductContext";
 import CartContext from "../context/CartContext";
@@ -9,14 +9,11 @@ import { useNavigate } from "react-router-dom";
 const Products = () => {
   const navigate = useNavigate();
 
-  //set dssplay to 4 products only
-  const [displayCount, setDisplayCount] = useState(4);
-
   //get products array from ProductContect
   const { products, orders } = useContext(ProductContext);
 
   //get carts items from Cart Context
-  const { cart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
 
   const { userId } = useContext(UserContext);
 
@@ -46,6 +43,12 @@ const Products = () => {
     navigate("searched/" + category);
   };
 
+  useEffect(() => {
+    const updatedCart = cart.filter((product) => product.user_id !== userId);
+    setCart(updatedCart);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  }, []);
+
   return (
     <div className="p-4 max-w-screen">
       {products.length === 0 ? (
@@ -66,13 +69,6 @@ const Products = () => {
                   Show More
                 </button>
                 <div className="md:grid md:grid-cols-4 md:gap-4 md:h-fit grid grid-cols-2 gap-1 ">
-                  {/* loop through all products and display them according to the type of category they fall under */}
-                  {/* {newProducts.map(
-                    (product, index) =>
-                      product.product_category === Category && (
-                        <ProductItem key={index} product={product} />
-                      )
-                  )} */}
                   {newProducts
                     .filter((product) => product.product_category === Category)
                     .slice(0, 4)

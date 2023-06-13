@@ -62,11 +62,11 @@ const Cart = () => {
       });
   };
 
-  useEffect(() => {
-    const updatedCart = cart.filter((product) => product.user_id !== userId);
-    setCart(updatedCart);
-    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
-  }, []);
+  // useEffect(() => {
+  //   const updatedCart = cart.filter((product) => product.user_id !== userId);
+  //   setCart(updatedCart);
+  //   localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  // }, []);
 
   return (
     <div className="md:mt-24 mt-48 max-w-screen mx-auto">
