@@ -16,7 +16,7 @@ const Search = () => {
 
   return (
     <form className="flex items-center" onSubmit={handleSearch}>
-      <div className="w-64">
+      <div className="md:w-64 w-full">
         <input
           type="text"
           id="simple-search"

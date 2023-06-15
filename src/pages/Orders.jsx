@@ -10,7 +10,7 @@ const Orders = () => {
   const userOrders = orders.filter((item) => item.buyer_id === userId);
 
   return (
-    <div className="md:mt-24 max-w-screen h-screen mt-48">
+    <div className="md:mt-24 max-w-screen mt-36">
       {userOrders.length > 0 ? (
         <div className="md:w-3/4 p-3 shadow-md h-fit shadow-gray-300 bg-gray-50">
           <div className="">

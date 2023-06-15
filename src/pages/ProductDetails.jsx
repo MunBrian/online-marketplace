@@ -20,7 +20,7 @@ const ProductDetails = () => {
   const productDetails = products.filter((product) => product.$id === param.id);
 
   return (
-    <div className="max-w-screen-xl mx-auto p-4 md:mt-24 mt-48">
+    <div className="max-w-screen-xl mx-auto p-4 md:mt-24 mt-36">
       {productDetails.length === 0 ? (
         <SpinnerLoader />
       ) : (

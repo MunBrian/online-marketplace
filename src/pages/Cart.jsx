@@ -31,7 +31,11 @@ const Cart = () => {
     removeFromCart(id);
   };
 
+  //filter products that belong to the in session user
   const updatedCart = cart.filter((product) => product.user_id !== userId);
+
+  //update the value of local storage to updatedCart
+  localStorage.setItem("cartItems", JSON.stringify(updatedCart));
 
   const handleCheckOut = () => {
     if (!session) {
@@ -64,8 +68,13 @@ const Cart = () => {
       });
   };
 
+  useEffect(() => {
+    //update cart to value of updatedCart
+    setCart(updatedCart);
+  }, []);
+
   return (
-    <div className="md:mt-24 mt-48 max-w-screen mx-auto">
+    <div className="md:mt-24 mt-36 max-w-screen mx-auto">
       {isLoading ? (
         <SpinnerLoader />
       ) : (

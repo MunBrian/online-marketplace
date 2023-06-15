@@ -273,7 +273,7 @@ const ProductForm = () => {
   }, [param.id]);
 
   return (
-    <div className="md:mt-24 mt-48 flex justify-center">
+    <div className="md:mt-24 mt-36 flex justify-center">
       {isLoading ? (
         <SpinnerLoader />
       ) : (

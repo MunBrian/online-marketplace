@@ -36,7 +36,7 @@ const Searched = () => {
   );
 
   return (
-    <div className="max-w-screen-xl mx-auto h-screen p-4 md:mt-24 mt-48">
+    <div className="max-w-screen-xl mx-auto h-screen p-4 md:mt-24 mt-36">
       {products.length === 0 ? (
         <SpinnerLoader />
       ) : (

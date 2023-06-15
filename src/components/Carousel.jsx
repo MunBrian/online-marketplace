@@ -22,7 +22,7 @@ const Carousel = () => {
       }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
-      className="w-full relative mt-24 h-96"
+      className="w-full relative md:mt-24 mt-16  h-96"
     >
       <SwiperSlide>
         <img
