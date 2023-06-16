@@ -24,7 +24,12 @@ const ForgotPassword = () => {
         setEmail("");
       },
       function (error) {
-        console.log(error); // Failure
+        toast.error(
+          "The email provided was not found. Provide a valid email!!!",
+          {
+            autoClose: 4000,
+          }
+        ); // Failure
       }
     );
   };
