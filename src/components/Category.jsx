@@ -21,16 +21,18 @@ const Category = () => {
   };
 
   return (
-    <div className="flex justify-center items-center md:justify-start overflow-x-auto md:p-4 p-1 md:my-4">
-      {categoriesArray.map((category, index) => (
-        <button
-          key={index}
-          onClick={() => handleCategory(category)}
-          className="bg-blue-100 text-blue-800 text-xs truncate... font-medium mr-2 md:px-2.5 md:p-2 p-1 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-primary-800 hover:text-white"
-        >
-          {category}
-        </button>
-      ))}
+    <div className=" overflow-x-auto md:overflow-x-hidden py-2">
+      <div className="flex justify-center items-center md:justify-start md:p-4 p-1 md:my-4">
+        {categoriesArray.map((category, index) => (
+          <button
+            key={index}
+            onClick={() => handleCategory(category)}
+            className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 md:px-2.5 p-2 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-primary-800 hover:text-white"
+          >
+            <span className="truncate ...">{category}</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
