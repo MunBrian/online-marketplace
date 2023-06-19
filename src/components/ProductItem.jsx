@@ -13,7 +13,7 @@ const ProductItem = ({ product }) => {
       </Link>
       <div className=" mt-2 ">
         <Link to={"/home/product-detail/" + product.$id}>
-          <h5 className="md:text-xl whitespace-nowrap text-base font-semibold tracking-tight text-gray-900 dark:text-white md:mb-3 mt-2.5 mb-2">
+          <h5 className="md:text-xl whitespace-nowrap truncate ... text-base font-semibold tracking-tight text-gray-900 dark:text-white md:mb-3 mt-2.5 mb-2">
             {product.product_name}
           </h5>
         </Link>
