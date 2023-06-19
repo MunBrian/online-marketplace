@@ -4,6 +4,9 @@ import ProductContext from "../context/ProductContext";
 import { Link, useNavigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import SpinnerLoader from "../components/SpinnerLoader";
+import { toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -60,8 +63,22 @@ const Cart = () => {
         return res.json().then((json) => Promise.reject(json));
       })
       .then(({ url }) => {
+        //redirect to payment page after 3000 milliseconds
+        setTimeout(() => {
+          window.location = url;
+        }, 2000);
+        toast.success("You will be redirected to the payment page shortly.", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+        });
+
         setIsLoading(false);
-        window.location = url;
       })
       .catch((e) => {
         console.log(e.error);

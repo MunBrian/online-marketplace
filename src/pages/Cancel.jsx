@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import CancelAnimation from "/src/assests/animations/cancel.json";
 
 const Cancel = () => {
   return (
@@ -7,21 +9,12 @@ const Cancel = () => {
       <div className="flex items-center justify-center">
         <div className="w-2/5 p-6 bg-white border border-gray-200 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700">
           <div className="flex flex-col space-y-4 items-center pb-6 ">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              className="w-12 stroke-red-600 stroke-2"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path>
-            </svg>
-            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-400">
+            <Lottie
+              animationData={CancelAnimation}
+              className="w-32"
+              loop={false}
+            />
+            <h5 className="mb-2 text-xl font-bold tracking-tight text-red-800 dark:text-gray-400">
               Payment Failed!!
             </h5>
           </div>
