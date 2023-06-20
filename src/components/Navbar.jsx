@@ -177,7 +177,11 @@ const Navbar = () => {
               <button
                 id="dropdownNavbarList"
                 onClick={() => setDropDown(!dropdown)}
+<<<<<<< HEAD
                 data-dropdown-toggle={dropdown ? "dropdownNavbar" : null}
+=======
+                data-dropdown-toggle={dropdown ? "dropdownNavbar" : ""}
+>>>>>>> 4a9d56e195114c56106f82d27b5a81b147c31d5b
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 <svg
@@ -210,7 +214,11 @@ const Navbar = () => {
                 </svg>
               </button>
               <div
+<<<<<<< HEAD
                 id={dropdown ? "dropdownNavbar" : null}
+=======
+                id={dropdown ? "dropdownNavbar" : ""}
+>>>>>>> 4a9d56e195114c56106f82d27b5a81b147c31d5b
                 className={
                   !dropdown
                     ? "hidden absolute right-6 z-10 font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
