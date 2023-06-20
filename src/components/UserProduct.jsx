@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { databases, storage } from "../appwrite/appConfig";
+import { toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const UserProduct = ({ product }) => {
   //delete product
@@ -38,9 +41,21 @@ const UserProduct = ({ product }) => {
 
     filePromise.then(
       function (response) {
-        console.log(response);
         //reload the window
-        window.location.reload(); // Success
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+
+        toast.success("Product deleted successfully.", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+        });
       },
       function (error) {
         console.log(error); // Failure

@@ -12,7 +12,7 @@ const Orders = () => {
   return (
     <div className="md:mt-24 max-w-screen mt-36">
       {userOrders.length > 0 ? (
-        <div className="md:w-3/4 p-3 shadow-md h-fit shadow-gray-300 bg-gray-50">
+        <div className="md:w-3/4 p-3 shadow-md mb-4 h-fit shadow-gray-300 bg-gray-50">
           <div className="">
             <h2 className=" text-gray-800 dark:text-white text-start text-xl font-medium">
               Order {userOrders.length}

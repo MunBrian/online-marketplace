@@ -9,6 +9,7 @@ import SuccessAnimation from "/src/assests/animations/success.json";
 
 import "react-toastify/dist/ReactToastify.css";
 import CartContext from "../context/CartContext";
+import SpinnerLoader from "./SpinnerLoader";
 
 const Checkout = () => {
   //get userId and userDetails from UserContext
@@ -58,26 +59,23 @@ const Checkout = () => {
 
   useEffect(() => {
     //check if userId exists
-    if (userId) {
+    if (userId && name) {
       //loop through all items(products) in the cart and post them to order database
       const promises = cart.map((item) => handlePostOrder(item, userId));
 
       //handle promise
       Promise.all(promises)
         .then(function (response) {
-          console.log("All orders posted successfully:", response);
           //redirect to dashboard after 5000 milliseconds
           setTimeout(() => {
             window.location.href = "/home/orders";
-          }, 5000);
+          }, 2000);
 
-          //delete all items from the localstorage
-          localStorage.removeItem("cartItems");
           toast.success(
             "Payment was successfull. You will be redirected to the orders page.",
             {
               position: "top-right",
-              autoClose: 3000,
+              autoClose: 1000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: false,
@@ -86,50 +84,59 @@ const Checkout = () => {
               theme: "light",
             }
           );
+
+          //delete all items from the localstorage
+          localStorage.removeItem("cartItems");
         })
         .catch(function (error) {
           console.log("Error posting orders:", error);
         });
     }
-  }, [userId]);
+  }, [userId, name]);
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-2/5 p-6 bg-white border border-gray-200 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700">
-        <div className="flex flex-col space-y-4 items-center pb-6 ">
-          <Lottie
-            animationData={SuccessAnimation}
-            className="w-32"
-            loop={false}
-          />
-          <h5 className="mb-2 text-lg font-normal tracking-tight text-gray-900 dark:text-gray-400">
-            Payment Successful
-          </h5>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            ${cartPrice}
-          </h1>
-        </div>
-        <div className="border-t border-gray-500 py-6">
-          <div className="flex justify-between p-2">
-            <span className="text-sm font-normal tracking-tight text-gray-900 dark:text-gray-400">
-              Sender
-            </span>
-            <div className="text-base font-normal tracking-tight text-gray-900 dark:text-gray-200">
-              {name}
+    <>
+      {!name ? (
+        <SpinnerLoader />
+      ) : (
+        <div className="flex items-center justify-center">
+          <div className="w-2/5 p-6 bg-white border border-gray-200 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className="flex flex-col space-y-4 items-center pb-6 ">
+              <Lottie
+                animationData={SuccessAnimation}
+                className="w-32"
+                loop={false}
+              />
+              <h5 className="mb-2 text-lg font-normal tracking-tight text-gray-900 dark:text-gray-400">
+                Payment Successful
+              </h5>
+              <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                ${cartPrice}
+              </h1>
+            </div>
+            <div className="border-t border-gray-500 py-6">
+              <div className="flex justify-between p-2">
+                <span className="text-sm font-normal tracking-tight text-gray-900 dark:text-gray-400">
+                  Sender
+                </span>
+                <div className="text-base font-normal tracking-tight text-gray-900 dark:text-gray-200">
+                  {name}
+                </div>
+              </div>
+            </div>
+            <div className="border-y border-dashed border-gray-500 py-3">
+              <div className="flex justify-between">
+                <span className="text-sm font-normal tracking-tight text-gray-900 dark:text-gray-400">
+                  Total Payment
+                </span>
+                <div className="text-base font-normal tracking-tight text-gray-900 dark:text-gray-200">
+                  ${cartPrice}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="border-y border-dashed border-gray-500 py-3">
-          <div className="flex justify-between">
-            <span className="text-sm font-normal tracking-tight text-gray-900 dark:text-gray-400">
-              Total Payment
-            </span>
-            <div className="text-base font-normal tracking-tight text-gray-900 dark:text-gray-200">
-              ${cartPrice}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
