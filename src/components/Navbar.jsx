@@ -34,6 +34,8 @@ const Navbar = () => {
     );
   };
 
+  console.log(dropdown);
+
   return (
     <nav className="bg-white dark:bg-gray-900 z-50 fixed w-full top-0 left-0 border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex  flex-wrap  space-y-2 items-center justify-between mx-auto p-4">
@@ -51,7 +53,7 @@ const Navbar = () => {
               <button
                 id="dropdownNavbarList"
                 onClick={() => setDropDown(!dropdown)}
-                data-dropdown-toggle="dropdownNavbar"
+                data-dropdown-toggle={dropdown ? "dropdownNavbar" : ""}
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 <svg
@@ -85,11 +87,11 @@ const Navbar = () => {
                 </svg>
               </button>
               <div
-                id="dropdownNavbar"
+                id={dropdown ? "dropdownNavbar" : ""}
                 className={
-                  !dropdown
-                    ? "hidden absolute z-10 font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-                    : "z-10 absolute font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                  dropdown
+                    ? " absolute z-10 font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                    : "hidden z-10 absolute font-normal bg-white divide-y divide-gray-100 px-2 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
                 }
               >
                 <ul
