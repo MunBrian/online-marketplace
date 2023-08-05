@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "devStart": "nodemon server.js"
+    "build": "echo 'No build steps required for this app.'"
   },
   "keywords": [],
   "author": "",
