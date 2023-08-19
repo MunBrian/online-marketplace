@@ -61,7 +61,7 @@ O-Market features include:
    
 
 ## Contact
-If you have any questions or feedback about this project you can contact me at my email address 
+If you have any questions or feedback about this project you can contact me via my email address 
 [bk.mungai254@gmail.com](mailto:bk.mungai254@gmail.com)
 
 
