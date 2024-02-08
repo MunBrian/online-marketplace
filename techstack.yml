@@ -1,0 +1,441 @@
+repo_name: MunBrian/online-marketplace
+report_id: 883d0dbe3200b6f24c4ad4001f0e5d57
+version: 0.1
+repo_type: Public
+timestamp: '2024-02-08T10:28:16+00:00'
+requested_by: MunBrian
+provider: github
+branch: master
+detected_tools_count: 32
+tools:
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/MunBrian/online-marketplace
+  detection_source: Repo Metadata
+- name: Autoprefixer
+  description: PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
+  website_url: https://github.com/postcss/autoprefixer
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/2202/72d087642cfce6fef6f2dabec5bf49e8_400x400.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-05-30 12:14:45.000000000 Z
+- name: ExpressJS
+  description: Sinatra inspired web development framework for node.js -- insanely
+    fast, flexible, and simple
+  website_url: http://expressjs.com/
+  version: 4.18.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Microframeworks (Backend)
+  image_url: https://img.stackshare.io/service/1163/hashtag.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-11 20:40:34.000000000 Z
+- name: PostCSS
+  description: Transform CSS with JS plugins
+  website_url: https://github.com/postcss/postcss
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/3339/rlFcjEdI.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-05-30 12:14:45.000000000 Z
+- name: React
+  description: A JavaScript library for building user interfaces
+  website_url: https://reactjs.org/
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript UI Libraries
+  image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-19 19:29:27.000000000 Z
+- name: React Router
+  description: A complete routing solution for React.js
+  website_url: https://github.com/rackt/react-router
+  version: 6.11.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: JavaScript Framework Components
+  image_url: https://img.stackshare.io/service/3350/8261421.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-19 19:29:27.000000000 Z
+- name: Tailwind CSS
+  description: A utility-first CSS framework for rapid UI development
+  website_url: https://tailwindcss.com
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Front-End Frameworks
+  image_url: https://img.stackshare.io/service/8158/default_660b7c41c3ba489cb581eec89c04655404258c19.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-05-30 12:14:45.000000000 Z
+- name: Dotenv
+  description: Loads environment variables from .env for Nodejs projects
+  website_url: https://github.com/motdotla/dotenv
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Server Configuration and Automation
+  image_url: https://img.stackshare.io/service/8067/default_90dcb1286af7685c68df319c764b80704df1155b.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-11 13:40:43.000000000 Z
+- name: ESLint
+  description: The fully pluggable JavaScript code quality tool
+  website_url: http://eslint.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-05-30 12:14:45.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace
+  detection_source: Repo Metadata
+- name: Vite
+  description: Native-ESM powered web dev build tool
+  website_url: https://vitejs.dev/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: JS Build Tools / JS Task Runners
+  image_url: https://img.stackshare.io/service/21547/default_1aeac791cde11ff66cc0b20dcc6144eeb185c905.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-05-30 12:14:45.000000000 Z
+- name: nodemon
+  description: A simple monitor script for use during development of a node.js app
+  website_url: http://nodemon.io/
+  version: 2.0.22
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Monitoring
+  sub_category: node.js Application Monitoring
+  image_url: https://img.stackshare.io/service/5577/preview.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/server/package-lock.json
+  detection_source: server/package.json
+  last_updated_by: Brian Mungai
+  last_updated_on: 2023-08-05 20:51:33.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/server/package.json
+  detection_source: server/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-11 13:40:43.000000000 Z
+- name: Stripe
+  description: Payments for developers
+  website_url: https://stripe.com
+  open_source: false
+  hosted_saas: true
+  category: Payments
+  sub_category: Payment Services
+  image_url: https://img.stackshare.io/service/97/eW6tXeq3.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-11 13:40:43.000000000 Z
+- name: Vercel
+  description: It makes serverless application deployment easy
+  website_url: https://vercel.com/
+  open_source: false
+  hosted_saas: true
+  category: Application Utilities
+  sub_category: Static Web Hosting
+  image_url: https://img.stackshare.io/service/7618/bHjpwZem_400x400.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/vercel.json
+  detection_source: vercel.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-12 10:59:41.000000000 Z
+- name: Appwrite
+  description: End to end backend server for frontend and mobile developers
+  website_url: https://appwrite.io
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Application Utilities
+  sub_category: API Tools
+  image_url: https://img.stackshare.io/service/7422/default_60efecac5060743d8bb2e8695cc4aa235621f09a.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-01 10:23:10.000000000 Z
+- name: Flowbite
+  description: Open-source library of Tailwind CSS components
+  website_url: https://flowbite.com/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: UI Components
+  image_url: https://img.stackshare.io/service/40090/default_dd2d5033d0363b16e87367cb62b402aa9da531bf.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-12 10:44:45.000000000 Z
+- name: "@types/react"
+  description: TypeScript definitions for React
+  package_url: https://www.npmjs.com/@types/react
+  version: 18.2.7
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15894/default_1d65e37e65b7f80761374f0202776043277d505d.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-19 19:29:27.000000000 Z
+- name: "@types/react-dom"
+  description: TypeScript definitions for React
+  package_url: https://www.npmjs.com/@types/react-dom
+  version: 18.2.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15946/default_54b691c123fc8979741e800e4dcd3936c0f3b246.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-19 19:29:27.000000000 Z
+- name: concurrently
+  description: Run commands concurrently
+  package_url: https://www.npmjs.com/concurrently
+  version: 8.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16041/default_5fd43aeff4d6a935abc13737de01a0355210499d.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-11 20:40:34.000000000 Z
+- name: cors
+  description: Node.js CORS middleware
+  package_url: https://www.npmjs.com/cors
+  version: 2.8.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16165/default_41f04716a804e853d5c38a5b81ee0ea8a842ad82.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-11 20:40:34.000000000 Z
+- name: eslint-plugin-react
+  description: React specific linting rules for ESLint
+  package_url: https://www.npmjs.com/eslint-plugin-react
+  version: 7.32.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15817/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-19 19:29:27.000000000 Z
+- name: eslint-plugin-react-hooks
+  description: ESLint rules for React Hooks
+  package_url: https://www.npmjs.com/eslint-plugin-react-hooks
+  version: 4.6.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16149/default_1f3a2fc7d882e29a43394ecdf491b8989ea3f0fa.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-19 19:29:27.000000000 Z
+- name: express
+  description: Fast, unopinionated, minimalist web framework
+  package_url: https://www.npmjs.com/express
+  version: 4.18.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15818/default_db4a7791d2f1174547374b9b587bc10fec088a5a.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-11 20:40:34.000000000 Z
+- name: react-dom
+  description: React package for working with the DOM
+  package_url: https://www.npmjs.com/react-dom
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-19 19:29:27.000000000 Z
+- name: react-router-dom
+  description: DOM bindings for React Router
+  package_url: https://www.npmjs.com/react-router-dom
+  version: 6.11.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16025/default_e25d1fbb04a118c79fb444294461417342bd03bf.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-19 19:29:27.000000000 Z
+- name: react-toastify
+  description: React notification made easy
+  package_url: https://www.npmjs.com/react-toastify
+  version: 9.1.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18461/default_5ff724c0ff89bb42698aa80ef3403008cb0d8f72.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-19 19:29:27.000000000 Z
+- name: swiper
+  description: Most modern mobile touch slider and framework with hardware accelerated
+    transitions
+  package_url: https://www.npmjs.com/swiper
+  version: 9.3.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17656/default_b06ec1ccf403dac1459596b8571a4fb6a46577e1.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-11 13:40:43.000000000 Z
+- name: tailwindcss
+  description: A utility-first CSS framework for rapidly building custom user interfaces
+  package_url: https://www.npmjs.com/tailwindcss
+  version: 3.3.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17398/default_2cd7ed1c123f2fca074a6f4b16c4e73d5bfe82be.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-05-30 12:14:45.000000000 Z
+- name: uuid
+  description: RFC4122
+  package_url: https://www.npmjs.com/uuid
+  version: 9.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15916/default_e0a4fb1126d7400f419f0931cf1669947a5bc552.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-06-01 10:23:10.000000000 Z
+- name: vite
+  description: Native-ESM powered web dev build tool
+  package_url: https://www.npmjs.com/vite
+  version: 4.3.9
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/npm/image.png
+  detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package-lock.json
+  detection_source: package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-05-30 12:14:45.000000000 Z
+  vulnerabilities:
+  - name: Vite dev server option `server.fs.deny` can be bypassed when hosted on case-insensitive
+      filesystem
+    cve_id: CVE-2024-23331
+    cve_url: https://github.com/advisories/GHSA-c24v-8rfc-w8vw
+    detected_date: Jan 20
+    severity: high
+    first_patched: 4.5.2
