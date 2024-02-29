@@ -38,7 +38,7 @@ MunBrian/online-marketplace is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/5577/preview.png' alt='nodemon'/> [nodemon](http://nodemon.io/) – node.js Application Monitoring
 - <img width='25' height='25' src='https://img.stackshare.io/service/97/eW6tXeq3.png' alt='Stripe'/> [Stripe](https://stripe.com) – Payment Services
 - <img width='25' height='25' src='https://img.stackshare.io/service/7618/bHjpwZem_400x400.png' alt='Vercel'/> [Vercel](https://vercel.com/) – Static Web Hosting
-- <img width='25' height='25' src='https://img.stackshare.io/service/7422/default_60efecac5060743d8bb2e8695cc4aa235621f09a.png' alt='Appwrite'/> [Appwrite](https://appwrite.io) – API Tools
+- <img width='25' height='25' src='https://img.stackshare.io/service/7422/default_d8e82a63c6c6a5e521670b9cca2d451e9112f5ff.png' alt='Appwrite'/> [Appwrite](https://appwrite.io) – API Tools
 - <img width='25' height='25' src='https://img.stackshare.io/service/40090/default_dd2d5033d0363b16e87367cb62b402aa9da531bf.png' alt='Flowbite'/> [Flowbite](https://flowbite.com/) – UI Components
 
 Full tech stack [here](/techstack.md)
@@ -50,7 +50,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [MunBrian/online-marketplace](https://github.com/MunBrian/online-marketplace)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|32<br/>Tools used|02/08/24 <br/>Report generated|
+|32<br/>Tools used|02/29/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -205,7 +205,7 @@ Full tech stack [here](/techstack.md)
 ## Other (2)
 <table><tr>
   <td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/7422/default_60efecac5060743d8bb2e8695cc4aa235621f09a.png' alt='Appwrite'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/7422/default_d8e82a63c6c6a5e521670b9cca2d451e9112f5ff.png' alt='Appwrite'>
   <br>
   <sub><a href="https://appwrite.io">Appwrite</a></sub>
   <br>
