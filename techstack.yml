@@ -2,7 +2,7 @@ repo_name: MunBrian/online-marketplace
 report_id: 883d0dbe3200b6f24c4ad4001f0e5d57
 version: 0.1
 repo_type: Public
-timestamp: '2024-02-08T10:28:16+00:00'
+timestamp: '2024-02-29T19:56:37+00:00'
 requested_by: MunBrian
 provider: github
 branch: master
@@ -210,14 +210,15 @@ tools:
   last_updated_by: MunBrian
   last_updated_on: 2023-06-12 10:59:41.000000000 Z
 - name: Appwrite
-  description: End to end backend server for frontend and mobile developers
+  description: Appwrite's open-source platform lets you add Auth, DBs, Functions and
+    Storage to your product and build any application
   website_url: https://appwrite.io
   license: BSD-3-Clause
   open_source: true
   hosted_saas: false
   category: Application Utilities
   sub_category: API Tools
-  image_url: https://img.stackshare.io/service/7422/default_60efecac5060743d8bb2e8695cc4aa235621f09a.png
+  image_url: https://img.stackshare.io/service/7422/default_d8e82a63c6c6a5e521670b9cca2d451e9112f5ff.png
   detection_source_url: https://github.com/MunBrian/online-marketplace/blob/master/package.json
   detection_source: package.json
   last_updated_by: MunBrian
